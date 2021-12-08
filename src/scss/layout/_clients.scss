@@ -1,10 +1,96 @@
 @use "../base/extends" as *;
 @use "../sass-utils/all" as *;
 
-/*  C L I E N T   S E C T I O N  */ 
+/*  C L I E N T   S E C T I O N  */
 .client {
-
-  &__heading h2::before {
+  &__heading {
+    h2::before {
     content: "TESTIMONIAL";
+  }}
+
+  &__content {
+    @include query(lg) {
+      padding: 0 6rem;
+    }
+    @include query(md) {
+      padding: 0 3rem;
+    }
+    @include query(sm) {
+      padding: 0 1.5rem;
+    }
+
+
+    &-cards {
+      @extend .flex;
+      justify-content: space-between;
+      margin: 3rem 0;
+
+      .card {
+        flex: 0 1 49%;
+        border-radius: 5px;
+        background: var(--light-gray);
+        padding: rem(48);
+        cursor: grab;
+        user-select: none;
+
+        @include query(lg) {
+          flex: 0 1 100%;
+          &:nth-child(2){
+            display: none;
+          }
+        }
+
+        &-head {
+          @extend .flex;
+          justify-content: flex-start;
+          margin-bottom: 1.4rem;
+          gap: 1rem;
+
+          img {
+            border-radius: 50%;
+          }
+        }
+
+        &-text {
+          margin-bottom: 1.5rem;
+          color: var(--heading-gray);
+          font-weight: 500;
+        }
+
+        &-stars {
+          i {
+            color: #ffc107;
+          }
+        }
+      }
+    }
+
+    &-dots {
+      @extend .flex;
+      gap: 1rem;
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #cccccc;
+        cursor: pointer;
+
+        &--active {
+          background: var(--primary-clr);
+          position: relative;
+
+          &::after {
+            content: "";
+            display: block;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--primary-clr);
+            @include centerer();
+          }
+        }
+      }
+    }
   }
 }
