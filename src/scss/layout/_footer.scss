@@ -1,0 +1,50 @@
+@use "../base/extends" as *;
+@use "../sass-utils/all" as *;
+
+/*  F O O T E R  */
+.footer {
+  padding: rem(66) 0;
+
+  .layout {
+    @extend .flex;
+    justify-content: space-between;
+
+    @include query(lg) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .footer__p1 {
+      flex: 1 0 40%;
+      p {
+        color: var(--sub-heading-gray);
+      }
+
+      span a{
+        color: var(--primary-clr);
+
+        &:hover {
+          color: #1cb688;
+        }
+      }
+    }
+
+    .footer__p2 {
+      flex: 1 0 40%;
+      text-align: right;
+
+      p {
+        color: var(--sub-heading-gray);
+        cursor: pointer;
+
+        &:hover {
+          color: var(--primary-clr);
+        }
+      }
+
+      span {
+        color: #dddddd;
+        margin: 0 0.6rem;
+      }
+    }
+  }
+}

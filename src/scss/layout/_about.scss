@@ -1,0 +1,99 @@
+@use "../base/extends" as *;
+@use "../sass-utils/all" as *;
+
+/*  A B O U T   S E C T I O N  */
+.about {
+
+  &__heading h2::before{
+      content: "ABOUT ME";
+  }
+
+  &__content {
+    @extend .flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 5rem;
+    margin-bottom: 4rem;
+
+    @include query(lg) {
+      justify-content: center;
+      padding: 0 2rem;
+      margin-bottom: 2rem;
+      gap: 2rem;
+    }
+    &__ls {
+      flex: 0 1 65%;
+
+
+      @include query(lg) {
+        text-align: center;
+        flex: 0 1 100%;
+
+      }
+      & >:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      h2 {
+        font-size: clmp(1.4rem, 1.75rem);
+        
+        span {
+          color: var(--primary-clr);
+        }
+      }
+    }
+
+    &__rs {
+      flex: 1 1;
+      ul {
+        
+        li{
+          padding: .9rem 0;
+
+          span {
+            font-weight: var(--ft-bolder);
+            margin-right: 2px;
+          }
+
+          a {
+            color: var(--primary-clr);
+          }
+
+          &:not(:last-child) {
+            border-bottom: 1px solid #f1f1f1;
+          }
+        }
+      }
+    }
+
+  }
+
+  &__stats {
+    ul {
+      @extend .flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      li {
+        flex: 1 1 25%;
+        text-align: center;
+        padding: 1rem;
+
+        @include query(md) {
+          flex: 1 1 50%;
+
+        }
+        &:not(:last-child) {
+          border-right: 1px solid #f1f1f1;
+        }
+
+        h4 {
+          font-size: clmp(1.5rem, 3rem);
+          line-height: 1.3;
+          color: #6C757D;
+        }
+      }
+    }
+  }
+}

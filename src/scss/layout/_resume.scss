@@ -1,0 +1,141 @@
+@use "../base/extends" as *;
+@use "../sass-utils/all" as *;
+
+/*  R E S U M E   S E C T I O N  */
+.resume {
+  &__heading h2::before {
+    content: "SUMMARY";
+  }
+
+  .layout {
+    @include query(lg) {
+      padding: 0 4rem;
+    }
+    @include query(md) {
+      padding: 0 0.5rem;
+    }
+  }
+  &__content {
+    @extend .flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+
+    @include query(md) {
+      flex-direction: column;
+    }
+
+    &-ls,
+    &-rs {
+      flex: 0 1 48%;
+
+      @include query(md) {
+        flex: 0 1 100%;
+      }
+      h2 {
+        font-size: clmp(1.3rem, 1.5rem);
+        margin-bottom: 1rem;
+      }
+
+      .card {
+        border-radius: 5px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid #dee2e6;
+
+        p:nth-child(1) {
+          background: var(--primary-clr);
+          width: fit-content;
+          padding: 0.02rem 0.4rem;
+          border-radius: 3px;
+          color: #fff;
+          font-size: 14px;
+        }
+        p:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+
+        h3 {
+          margin-bottom: 0.5rem;
+        }
+        .p-red {
+          color: var(--sec-clr);
+        }
+      }
+    }
+  }
+
+  &__skills {
+    h2 {
+      font-size: clmp(1.3rem, 1.5rem);
+      margin-bottom: 1rem;
+    }
+
+    &__items {
+      @extend .flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 3.7rem;
+
+      li {
+        flex: 0 1 48%;
+        @extend .flex;
+        flex-flow: column wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+        padding: rem(15) 0;
+
+        @include query(md) {
+          flex: 0 1 100%;
+        }
+
+        label {
+          width: 100%;
+          @extend .flex;
+          justify-content: space-between;
+          font-weight: 500;
+          color: var(--heading-gray);
+          margin-bottom: 0.4rem;
+        }
+
+        progress {
+          width: 100%;
+          -webkit-appearance: none;
+          appearance: none;
+          height: 0.45rem;
+
+          &::-webkit-progress-bar {
+            background-color: #eee;
+            border-radius: rem(30);
+          }
+
+          &::-webkit-progress-value {
+            background: var(--primary-clr);
+            border-radius: rem(30) 0 0 rem(30);
+          }
+        }
+      }
+    }
+  }
+
+  &__cv {
+    text-align: center;
+
+    .btn {
+      border-color: #6c757d;
+      color: #6c757d !important;
+
+      i {
+        color: #6c757d !important;
+        margin-left: 0.1rem;
+      }
+      &:hover {
+        color: #fff !important;
+        background: #6c757d;
+      }
+      &:hover i {
+        color: #fff !important;
+      }
+    }
+  }
+}

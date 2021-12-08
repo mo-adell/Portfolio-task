@@ -1,0 +1,36 @@
+//Colors
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  /*  C O L O R S  */
+  --primary-clr:      #20C997;
+  --sec-clr:          #DC3545;
+  --light-gray:       #F8F9FA;
+  --heading-gray:     #212529;
+  --sub-heading-gray: #252B33;
+  --text-gray:        #4C4D4D;
+
+  /*  F O N T S  */
+  --ft: 'Poppins', sans-serif;
+  --ft-thin:     300;
+  --ft-regular:  400;
+  --ft-bold:     500;
+  --ft-bolder:   600;
+
+  /*  P A D D I N G  */ 
+  --pd-desk: 4.5rem 0;
+  --pd-mobile: 3.5rem 0;
+}
+
+//Maps
+$breakpoints: (
+  // 600px
+  sm: 37.5rem,
+  // 768px
+  md: 48rem,
+  // 992px
+  lg: 62rem,
+  // 1200px
+  xlg: 75rem,
+);
+

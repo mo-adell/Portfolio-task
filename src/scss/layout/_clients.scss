@@ -1,0 +1,10 @@
+@use "../base/extends" as *;
+@use "../sass-utils/all" as *;
+
+/*  C L I E N T   S E C T I O N  */ 
+.client {
+
+  &__heading h2::before {
+    content: "TESTIMONIAL";
+  }
+}

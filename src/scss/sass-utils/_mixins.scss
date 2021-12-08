@@ -1,0 +1,52 @@
+@use "variables" as *;
+
+@mixin query($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+    @media (max-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+@mixin centerer($horizontal: true, $vertical: true, $top: 50%, $left: 50%) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: $top;
+    left: $left;
+    transform: translate(-$left, -$top);
+  } @else if ($horizontal) {
+    left: $left;
+    transform: translate(-$left, 0);
+  } @else if ($vertical) {
+    top: $top;
+    transform: translate(0, -$top);
+  }
+}
+
+@mixin flexbox($dir: null, $jc: null, $ai: null, $gap: null) {
+  display: flex;
+
+  @if $dir == col {
+    flex-direction: column;
+  } @else if $dir == column {
+    flex-direction: column;
+  } @else if $dir == row {
+    flex-direction: row;
+  } @else if $dir {
+    flex-direction: $dir;
+  }
+
+  @if $ai {
+    align-items: $ai;
+  }
+  @if $jc {
+    justify-content: $jc;
+  }
+  @if $gap {
+    gap: $gap;
+  }
+}
+

@@ -1,0 +1,58 @@
+@use "../base/extends" as *;
+@use "../sass-utils/all" as *;
+
+/*  S E R V I C E S   S E C T I O N  */
+
+.services {
+  background: var(--light-gray);
+
+  &__heading h2::before {
+    content: "SERVICES";
+  }
+
+  &__content {
+    padding: 0 4rem;
+
+    @include query(md) {
+      padding: 0 1rem;
+    }
+
+    ul {
+      @extend .flex;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      flex: 1 0 50%;
+      @extend .flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+
+      @include query(md) {
+        flex: 1 0 100%;
+      }
+
+      .icon {
+        flex: 1 0 70px;
+        @extend .flex;
+        height: 70px;
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.075) 0px 2px 4px;
+        border-radius: 5px;
+        margin-right: 1rem;
+
+        i {
+          font-size: 2.5rem;
+          font-weight: 600;
+        }
+      }
+
+      .text {
+        h3 {
+          margin-bottom: .4rem;
+        }
+      }
+    }
+  }
+}

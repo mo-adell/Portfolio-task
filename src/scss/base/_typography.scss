@@ -1,0 +1,42 @@
+@use '../sass-utils/all' as *;
+
+/*  T Y P O G R A P H Y  */
+//p typo
+.font-stack-1 {
+  font-family: var(--ft);
+  font-size: clmp(1rem, 1.02rem);
+  line-height: 1.7;
+  color: var(--text-gray);
+}
+
+
+.font-stack-2-bold {
+  font-family: var(--ft);
+  font-size: clmp(1.15rem, 1.25rem);
+  font-weight: var(--ft-bold);
+  color: var(--sub-heading-gray);
+}
+
+.font-stack-3-bolder {
+  font-family: var(--ft);
+  font-size: clmp(2.2rem, 2.25rem);
+  font-weight: var(--ft-bolder);
+  color: var(--heading-gray);
+}
+
+i[class|="icofont"] {
+  font-size: 1.25rem;
+  color: var(--primary-clr);
+}
+
+p,a,li {
+  @extend .font-stack-1;
+}
+
+h3,h4 {
+  @extend .font-stack-2-bold;
+}
+
+h1,h2 {
+  @extend .font-stack-3-bolder;
+}

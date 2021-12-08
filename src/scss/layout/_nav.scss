@@ -1,0 +1,85 @@
+@use "../base/extends" as *;
+@use "../sass-utils/all" as *;
+
+/*  N A V B A R  */
+.navbar {
+  @extend .flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  background: rgba($color: #000000, $alpha: 0.4);
+  padding: 0 2rem;
+  position: fixed;
+  width: 100vw;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+
+  @include query(lg) {
+    padding: .8rem;
+  }
+
+  &__toggler {
+    display: none;
+    cursor: pointer;
+
+    i {
+      color: #fff;
+    }
+
+    @include query(lg) {
+      display: block;
+    }
+  }
+
+  .navbar__items {
+
+    @include query(lg) {
+      display: none;
+      padding: 0 1rem;
+      flex: 1 0 100%;
+      order: 3;
+      background-color: rgb(5, 5, 5);
+    }
+
+    ul {
+      @extend .flex;
+      gap: rem(30);
+
+      @include query(lg) {
+        flex-flow: column wrap;
+        align-items: flex-start;
+        gap: .1rem;
+      }
+
+      li a {
+        display: inline-block;
+        color: #fff;
+        padding: 1.3rem 0;
+        transition: color 250ms;
+
+        &.active {
+          color: var(--primary-clr);
+        }
+
+        &:hover {
+          color: var(--primary-clr);
+        }
+      }
+    }
+  }
+
+  
+  &__social ul {
+    gap: 1.5rem;
+    @extend .flex;
+
+    li a i {
+      transition: color 250ms;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}

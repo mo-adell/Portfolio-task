@@ -1,0 +1,18 @@
+@use "sass:math";
+
+@function clmp($min-font-size, $max-font-size) {
+  $min-width: math.div(380rem, 16);   //min width to rems
+  $max-width: math.div(1000rem, 16);   //max width to rems
+  
+  $slope: math.div(($max-font-size - $min-font-size), ($max-width - $min-width));
+  $y-intersection: -$min-width * $slope + $min-font-size;
+  $preferred-value: #{ $y-intersection "+" ($slope *100) + "vw" };
+
+  @return #{ "clamp(" + $min-font-size "," $preferred-value "," $max-font-size + ")" }
+}
+
+@function rem($value) {
+  $rm: math.div($value, 16);
+
+  @return #{ $rm + 'rem' };
+}

@@ -1,0 +1,32 @@
+@use '../sass-utils/all' as *;
+
+/*  C O M M O N   C L A S S E S  */
+.flex {
+  @include flexbox(row, center, center, 0);
+}
+
+.layout {
+  max-width: 1320px;
+  margin: 0 auto;
+  
+  @include query(xlg) {
+    max-width: 1100px;
+  }
+  @include query(lg) {
+    max-width: 900px;
+  }
+  @include query(md) {
+    max-width: 540px;
+  }
+  @include query(sm) {
+    max-width: 100%;
+  }
+}
+
+section {
+  padding: var(--pd-desk);
+  
+  @include query(sm) {
+    padding: var(--pd-mobile);
+  }
+}

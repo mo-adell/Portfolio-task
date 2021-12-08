@@ -1,0 +1,11 @@
+@use "../base/extends" as *;
+@use "../sass-utils/all" as *;
+
+/*  C O N T A C T    S E C T I O N  */ 
+.contact {
+  background: var(--light-gray);
+  
+  &__heading h2::before {
+    content: "CONTACT";
+  }
+}

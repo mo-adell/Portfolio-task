@@ -1,0 +1,40 @@
+/*  B A S I C   R E S E T  */
+html {
+  direction: ltr;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+*::selection {
+  background: var(--primary-clr);
+  color: #fff;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+
+  &::selection {
+    background: transparent;
+  }
+}
+

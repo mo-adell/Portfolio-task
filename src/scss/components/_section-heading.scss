@@ -1,0 +1,44 @@
+@use "../sass-utils/all" as *;
+@use "../base/extends" as *;
+
+.section-heading {
+  padding-top: rem(60);
+  margin-bottom: rem(90);
+  
+  @include query(sm) {
+  margin-bottom: rem(30);
+  padding-top: rem(20);
+  }
+
+  h2 {
+    @extend .flex;
+    text-align: center;
+    position: relative;
+    z-index: 99999;
+
+    &::before {
+      content: "CONTENT HERE";
+      display: inline-block;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+      font-family: var(--ft);
+      font-weight: var(--ft-bolder);
+      font-size: clmp(3.5rem, 8.25rem);
+      color: #dee3e481;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 7%;
+      height: 3.5px;
+      z-index: 99999;
+      background: var(--primary-clr);
+    }
+  }
+}
