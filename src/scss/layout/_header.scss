@@ -55,6 +55,8 @@
             animation: blink .3s infinite ease-in-out, 
                        typing 2s linear infinite alternate,
                        translate 16s steps(4) infinite;
+
+            animation-delay: 3.1s;                       
             border-right: rem(10) solid #fff;
           
             &::before {
