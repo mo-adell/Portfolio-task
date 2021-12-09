@@ -1,11 +1,153 @@
 @use "../base/extends" as *;
 @use "../sass-utils/all" as *;
 
-/*  C O N T A C T    S E C T I O N  */ 
+/*  C O N T A C T    S E C T I O N  */
 .contact {
   background: var(--light-gray);
-  
+
   &__heading h2::before {
     content: "CONTACT";
+  }
+
+  &__content {
+    @extend .flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-top: 2rem;
+
+    @include query(xlg) {
+      padding: 2rem 5rem;
+      gap: 2rem;
+    }
+    @include query(md) {
+      padding: 0 1rem;
+      gap: 2rem;
+      justify-content: center;
+    align-items: center;
+    }
+    @include query(sm) {
+      padding: 0 .8rem;
+    }
+
+    h2 {
+      font-size: rem(21);
+      font-weight: 500;
+      margin-bottom: 1rem;
+      align-self: flex-start;
+
+      @include query(md) {
+        align-self: center;
+      }
+    }
+    &-data {
+      flex: 0 1 25%;
+
+    @include query(md) {
+      flex: 1 1;
+      text-align: center;
+    }
+      > p {
+        margin-bottom: 1.5rem;
+      }
+
+      ul li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    &-form {
+      flex: 1 0;
+
+      @include query(md) {
+        order: -1;
+        flex: 1 0 100%;
+      }
+
+      form {
+        @extend .flex;
+        flex-flow: column wrap;
+        align-items: center;
+        gap: 1rem;
+
+        @include query(xlg) {
+          gap: 0.2rem;
+        }
+
+        .r1 {
+          @extend .flex;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          width: 100%;
+
+          @include query(xlg) {
+            flex-direction: column;
+          }
+
+          input {
+            flex: 0 1 49%;
+            padding: 0.8rem;
+
+            @include query(xlg) {
+              width: 100%;
+              margin-bottom: 1rem;
+            }
+
+            border: 1px solid #dae1e3;
+            border-radius: 5px;
+            color: var(--heading-gray);
+            font-family: var(--ft);
+            font-weight: var(--ft-regular);
+            font-size: 1rem;
+
+            &::placeholder {
+              color: #a09e9e;
+              font-family: var(--ft);
+              font-weight: var(--ft-regular);
+              font-size: 1rem;
+            }
+
+            &:focus {
+              outline: none !important;
+              border: 1px solid #86b7fe;
+              box-shadow: 0 0 3px #719ece;
+            }
+          }
+        }
+
+        textarea {
+          width: 100%;
+          padding: 0.8rem;
+          min-height: 150px;
+          color: var(--heading-gray);
+          border: 1px solid #dae1e3;
+          border-radius: 5px;
+          resize: vertical;
+
+          font-family: var(--ft);
+          font-weight: var(--ft-regular);
+          font-size: 1rem;
+
+          margin-bottom: 1rem;
+
+          &::placeholder {
+            color: #a09e9e;
+            font-family: var(--ft);
+            font-weight: var(--ft-regular);
+            font-size: 1rem;
+          }
+          &:focus {
+            outline: none !important;
+            border: 1px solid #86b7fe;
+            box-shadow: 0 0 3px #719ece;
+          }
+        }
+
+        .btn {
+          font-size: 16px;
+          font-weight: 600 !important;
+        }
+      }
+    }
   }
 }
