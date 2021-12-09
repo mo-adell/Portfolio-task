@@ -1,0 +1,38 @@
+@use "../base/extends" as *;
+@use "../sass-utils/all" as *;
+
+/*  P R E L O A D E R   S E C T I O N  */ 
+.preloader {
+  width: 100vw;
+  height: 100vh;
+  background: var(--light-gray);
+  position: fixed;
+  inset: 0;
+  z-index: 99999999999999;
+  @extend .flex;
+  gap: .7rem;
+  animation: hide .1s ease-out 1 forwards;
+  animation-delay: 3s;
+
+  .dot {
+    width: 15px;
+    height: 15px;
+    background: var(--primary-clr);
+    border-radius: 50%;
+    animation: dot .5s ease-in-out infinite alternate;
+  }
+
+}
+
+
+@keyframes hide {
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
+@keyframes dot {
+  to {
+    transform: scale(.7);
+  }
+}
