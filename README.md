@@ -3,14 +3,14 @@
 
 portfolio landing page, the task was to create a page like the original one and this is the result
 
-
-
-![banner](build/images/intro-bg.jpg)
-
-
 ## Demo
 [Click Here](https://mo-adell.github.io/Portfolio-task/)
 
+
+![banner](build/images/main.jpg)
+
+
+@
 ## NPM
 
 to install dependancies
